@@ -11,7 +11,7 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
   eventhub_name                  = var.eventhub_name
 
   dynamic "enabled_log" {
-    for_each = var.diagnostic_setting_categories != null ? var.diagnostic_setting_categories : []
+    for_each = data.azurerm_monitor_diagnostic_categories.this.logs != null ? data.azurerm_monitor_diagnostic_categories.this.logs : []
     content {
       category = enabled_log.value
     }
