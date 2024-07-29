@@ -33,12 +33,6 @@ variable "storage_account_id" {
   default     = null
 }
 
-variable "enabled_log_block_categories" {
-  description = "(Optional) The log category for the Azure Active Directory Diagnostic. default: SignInLogs, AuditLogs, NonInteractiveUserSignInLogs, ServicePrincipalSignInLogs."
-  type        = list(string)
-  default     = ["SignInLogs", "AuditLogs", "NonInteractiveUserSignInLogs", "ServicePrincipalSignInLogs"]
-}
-
 variable "enabled_log_block_retention_policy" {
   description = "(Optional) Defines how long the collected logs or metrics are retained before being automatically deleted."
   type        = map(string)
